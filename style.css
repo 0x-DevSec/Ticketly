@@ -1,0 +1,423 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f9fafc;
+    color: #1a1a1a;
+    padding: 40px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.step.active span {
+    background: #2563eb;
+}
+
+.step p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.line {
+    width: 50px;
+    height: 2px;
+    background: #d9d9d9;
+    margin: 0 15px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px;
+}
+
+.info {
+    margin: 0 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px;
+}
+
+button {
+    margin: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #1e4fd0;
+}
+
+/* Hide sections by default */
+
+.hidden
+{
+    display: none;
+}
+
+
+/* Step 2 styling (same style family as Step 1) */
+#step2 .selected-event {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#step2 .selected-event img {
+    width: 160px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+#step2 .event-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#step2 .ticket-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#step2 .ticket-counter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#step2 .counter-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #ddd;
+    background: #f3f4f6;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+#step2 .ticket-counter input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+}
+
+#step2 .total-box {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+#step2 .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+#step2 .back-btn,
+#step2 .next-btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+#step2 .back-btn {
+    background: #f3f4f6;
+    color: #333;
+}
+
+#step2 .next-btn {
+    background: #000;
+    color: #fff;
+}
+
+#step2 .next-btn:hover {
+    background: #111;
+}
+
+
+/* STEP 3 */
+#step3 .participant-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+}
+
+#step3 h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#step3 .participant-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#step3 label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+#step3 input {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #f9fafc;
+    outline: none;
+}
+
+#step3 input:focus {
+    border-color: #2563eb;
+    background: #fff;
+}
+
+#step3 .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+#step3 .back-btn,
+#step3 .next-btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+#step3 .back-btn {
+    background: #f3f4f6;
+    color: #333;
+}
+
+#step3 .next-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+#step3 .next-btn:hover {
+    background: #1e4fd0;
+}
+
+/* Highlight current step in progress bar */
+.current span {
+    background: #2563eb;
+}
+
+/* STEP 4: Confirmation */
+#step4 .confirmation-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+#step4 .reservation-details,
+#step4 .participants-list,
+#step4 .payment-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#step4 .reservation-details h4,
+#step4 .participants-list h4,
+#step4 .payment-box h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#step4 .event-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#step4 .event-summary img {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#step4 .event-summary h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#step4 .participants-list .participant-item {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#step4 .payment-box {
+    text-align: left;
+}
+
+#step4 .payment-details {
+    font-size: 14px;
+    color: #333;
+}
+
+#step4 .payment-details p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+#step4 .payment-details hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+#step4 .payment-details .total {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#step4 .confirm-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #ec4899;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+#step4 .confirm-btn:hover {
+    background: #db2777;
+}
+
+#step4 .back-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    color: #333;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Highlight current step in progress bar */
+#step4 .current span {
+    background: #2563eb;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #step4 .confirmation-layout {
+        grid-template-columns: 1fr;
+    }
+}
